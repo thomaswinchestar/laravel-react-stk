@@ -33,7 +33,7 @@ class TaskController extends Controller
      */
     public function store(StoreTaskRequest $request)
     {
-        Task::create($request->validated() + ['is_completed' => false]);
+        Task::create($request->validated());
         return redirect()->route('tasks.index')->with('success', 'Task created successfully.');
     }
 
